@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../src/function/01.call.js"></script>
+  <script src="../src/function/03.bind.js"></script>
+</head>
+<body>
+  <script>
+    function add(a,b){
+      console.log(this)
+      console.log(arguments)
+      return a + b + this.c
+    }
+
+    let obj = {
+      c: 521
+    }
+
+    window.c = 1314
+
+    // let fn = bind(add, obj,10,20)
+    // console.log(fn())
+
+    // let fn2 = bind(add, obj)
+    // console.log(fn2(10,20))
+
+    // let fn3 = add.bind(obj,10,20)
+    // console.log(fn3(30,40))
+
+    let fn4 = bind(add,obj,10,20)
+    console.log(fn4(31,41))
+  </script>
+</body>
+</html>
