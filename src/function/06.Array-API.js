@@ -49,3 +49,23 @@ function findIndex(arr,callback){
   }
   return -1
 }
+
+// every
+function every(arr,callback){
+  for(let i=0;i<arr.length;i++){
+    if(!callback(arr[i],i)){
+      return false
+    }
+  }
+  return true
+}
+
+// some
+function some(arr,callback){
+  for(let i=0;i<arr.length;i++){
+    if(callback(arr[i],i)){
+      return true
+    }
+  }
+  return false
+}
