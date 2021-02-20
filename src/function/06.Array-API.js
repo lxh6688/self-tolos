@@ -27,3 +27,25 @@ function filter(arr,callback){
   }
   return result
 }
+
+// find
+function find(arr,callback){
+  for(let i=0;i<arr.length;i++){
+    let res = callback(arr[i],i)
+    if(res){
+      return arr[i]
+    }
+  }
+  return undefined
+}
+
+// findIndex
+function findIndex(arr,callback){
+  for(let i=0;i<arr.length;i++){
+    let res = callback(arr[i],i)
+    if(res){
+      return i
+    }
+  }
+  return -1
+}
