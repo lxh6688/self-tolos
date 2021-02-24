@@ -33,3 +33,19 @@ function axios({method,url,params,data}){
     }
   })
 }
+
+axios.get = function(url,options){
+  return axios(Object.assign(options,{method: 'GET',url:url}))
+}
+
+axios.post = function(url,options){
+  return axios(Object.assign(options,{method: 'POST',url:url}))
+}
+
+axios.put = function(url,options){
+  return axios(Object.assign(options,{method: 'PUT',url:url}))
+}
+
+axios.delete = function(url,options){
+  return axios(Object.assign(options,{method: 'DELETE',url:url}))
+}
